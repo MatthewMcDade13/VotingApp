@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using Microsoft.Extensions.Configuration;
+using VotingApp.Models;
 
 namespace VotingApp
 {
@@ -32,6 +33,13 @@ namespace VotingApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddSingleton(Configuration);
+
+            services.AddDbContext<VotingContext>();
+
+            services.AddScoped<IVotingRepository, VotingRepository>();
+
             services.AddMvc()
                 .AddJsonOptions(options =>
                {

@@ -1,5 +1,5 @@
 ﻿{
   "Data": {
-    "ConnectionString": "Server=(localdb)\\MSSQLLocalDB;Database=VotingAppDb;Trust_Connection=true;MultipleActiveResultSets=true;"
+    "ConnectionString": "Server=(localdb)\\MSSQLLocalDB;Database=VotingAppDb;MultipleActiveResultSets=true;"
   }
 }

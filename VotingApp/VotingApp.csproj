@@ -5,10 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\app\global\**" />
+    <Content Remove="wwwroot\app\global\**" />
+    <EmbeddedResource Remove="wwwroot\app\global\**" />
+    <None Remove="wwwroot\app\global\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="wwwroot\app\app.config.ts" />
     <Content Include="wwwroot\app\app.ts" />
-    <Content Include="wwwroot\app\global.d.ts" />
-    <Content Include="wwwroot\app\global\__dummy__" />
+    <Content Include="wwwroot\app\globals\global.d.ts" />
     <Content Include="wwwroot\app\HomeController.ts" />
     <Content Include="wwwroot\app\tsconfig.json" />
     <Content Include="wwwroot\css\site.css" />

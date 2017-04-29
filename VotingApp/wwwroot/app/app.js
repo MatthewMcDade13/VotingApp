@@ -1,4 +1,4 @@
-/// <reference path="global.d.ts" />
+/// <reference path="globals/global.d.ts" />
 var app;
 (function (app) {
     angular.module("VotingApp", ["ngRoute"]);

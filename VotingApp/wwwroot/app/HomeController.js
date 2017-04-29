@@ -1,4 +1,4 @@
-/// <reference path="global.d.ts" />
+/// <reference path="globals/global.d.ts" />
 var app;
 (function (app) {
     var controllers;
@@ -10,7 +10,7 @@ var app;
             return HomeController;
         }());
         controllers.HomeController = HomeController;
-        angular.module("VotingApp").controller("HomeController", [HomeController]);
+        angular.module("VotingApp").controller("HomeController", HomeController);
     })(controllers = app.controllers || (app.controllers = {}));
 })(app || (app = {}));
 //# sourceMappingURL=HomeController.js.map

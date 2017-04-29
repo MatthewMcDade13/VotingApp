@@ -5,19 +5,19 @@ var app;
 (function (app_1) {
     var app = angular.module("VotingApp");
     app.config(function ($routeProvider) {
-        $routeProvider.when("/", {
+        $routeProvider.when("/polls", {
             controller: "HomeController",
             controllerAs: "home",
             templateUrl: "/views/home.html",
             title: "All Polls"
         });
-        $routeProvider.when("/test", {
+        $routeProvider.when("/polls/test", {
             controller: "HomeController",
             controllerAs: "home",
             templateUrl: "/views/test.html",
             title: "Test"
         });
-        $routeProvider.otherwise({ redirectTo: "/" });
+        $routeProvider.otherwise({ redirectTo: "/polls" });
     });
     app.run(['$rootScope', function ($rootScope) {
             $rootScope.$on("$routeChangeSuccess", function (event, current, previous) {

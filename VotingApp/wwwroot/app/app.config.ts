@@ -9,7 +9,7 @@ module app
 
         app.config(($routeProvider: any) => {
 
-            $routeProvider.when("/", {
+            $routeProvider.when("/polls", {
 
                 controller: "HomeController",
                 controllerAs: "home",
@@ -17,14 +17,14 @@ module app
                 title: "All Polls"
             });
 
-            $routeProvider.when("/test", {
+            $routeProvider.when("/polls/test", {
                 controller: "HomeController",
                 controllerAs: "home",
                 templateUrl: "/views/test.html",
                 title: "Test"
             });
 
-            $routeProvider.otherwise({ redirectTo: "/" });
+            $routeProvider.otherwise({ redirectTo: "/polls" });
          });
 
         app.run(['$rootScope', function ($rootScope: any) {

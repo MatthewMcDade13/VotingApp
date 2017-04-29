@@ -2,8 +2,12 @@
 
 
 <div class="jumbotron">
-
-    <div id="poll">
-        <h3>{{home.header}}</h3>
+    <!--<div id="poll" ng-repeat="poll in home.polls">
+        <h3>{{poll}}</h3>
+    </div>-->
+        
+    <div  ng-repeat="poll in home.polls">
+        <a id="poll" href="#">{{poll}}</a>
     </div>
+    
 </div>

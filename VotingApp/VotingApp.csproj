@@ -5,7 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Content Include="wwwroot\app\app.config.ts" />
+    <Content Include="wwwroot\app\app.ts" />
+    <Content Include="wwwroot\app\global.d.ts" />
+    <Content Include="wwwroot\app\global\__dummy__" />
+    <Content Include="wwwroot\app\HomeController.ts" />
+    <Content Include="wwwroot\app\tsconfig.json" />
+    <Content Include="wwwroot\css\site.css" />
+    <Content Include="wwwroot\views\home.html" />
+    <Content Include="wwwroot\views\test.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\Api\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />

@@ -56,6 +56,8 @@ namespace VotingApp
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseStaticFiles();
+
            app.UseMvc(config =>
            {
                config.MapRoute(

@@ -8,9 +8,9 @@ var app;
             //Iterates through Ip adresses,
             //Returns false if passed in IP string matches anything
             //in the array of ip Adresses. True if none match
-            IpService.prototype.checkIp = function (adresses, ip) {
+            IpService.prototype.checkIp = function (adresses, userIp) {
                 for (var i = 0; i < adresses.length; i++) {
-                    if (adresses[i].adress === ip) {
+                    if (adresses[i].ip === userIp) {
                         return false;
                     }
                 }

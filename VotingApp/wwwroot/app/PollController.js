@@ -126,7 +126,7 @@ var app;
                     return __generator(this, function (_a) {
                         switch (_a.label) {
                             case 0:
-                                if (!this.IpService.checkIp(this.pollView.adresses, this.userIp.adress)) return [3 /*break*/, 2];
+                                if (!this.IpService.checkIp(this.pollView.adresses, this.userIp.ip)) return [3 /*break*/, 2];
                                 //Cast vote
                                 vote.voteCount++;
                                 this.pollView.adresses.push(this.userIp);
@@ -168,7 +168,7 @@ var app;
                                     alert("that vote option already exists!");
                                     return [2 /*return*/];
                                 }
-                                if (!this.IpService.checkIp(this.pollView.adresses, this.userIp.adress)) return [3 /*break*/, 2];
+                                if (!this.IpService.checkIp(this.pollView.adresses, this.userIp.ip)) return [3 /*break*/, 2];
                                 this.isBusy = true;
                                 return [4 /*yield*/, this.http.createNewVoteOption(voteOption)];
                             case 1:

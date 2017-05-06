@@ -98,7 +98,7 @@
 
             //If current user Ip is NOT found in the array of known
             //User Ips associated with this pollView
-            if (this.IpService.checkIp(this.pollView.adresses, this.userIp.adress))
+            if (this.IpService.checkIp(this.pollView.adresses, this.userIp.ip))
             {
 
                 //Cast vote
@@ -140,7 +140,7 @@
                 return;
             }
 
-            if (this.IpService.checkIp(this.pollView.adresses, this.userIp.adress))
+            if (this.IpService.checkIp(this.pollView.adresses, this.userIp.ip))
             {
                 this.isBusy = true;
                 await this.http.createNewVoteOption(voteOption);

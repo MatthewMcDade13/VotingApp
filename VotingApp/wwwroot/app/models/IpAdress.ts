@@ -2,7 +2,6 @@
 {
     export class IpAdress
     {
-        id: number;
-        adress: string;
+        ip: string;
     }
 }

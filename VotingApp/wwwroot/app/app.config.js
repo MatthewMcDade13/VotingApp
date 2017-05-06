@@ -1,6 +1,3 @@
-/// <reference path="globals/global.d.ts" />
-//We are using custom properties to change page title 
-//so we cant use Angular Types ):
 var app;
 (function (app_1) {
     var app = angular.module("VotingApp");
@@ -11,11 +8,23 @@ var app;
             templateUrl: "/views/home.html",
             title: "All Polls"
         });
-        $routeProvider.when("/polls/test", {
-            controller: "HomeController",
-            controllerAs: "home",
-            templateUrl: "/views/test.html",
-            title: "Test"
+        $routeProvider.when("/polls/:userId/", {
+            controller: "PollController",
+            controllerAs: "poll",
+            templateUrl: "/views/poll.html",
+            title: "Poll"
+        });
+        $routeProvider.when("/mypolls", {
+            controller: "AuthPollController",
+            controllerAs: "poll",
+            templateUrl: "/views/mypolls.html",
+            title: "My Polls"
+        });
+        $routeProvider.when("/newpoll", {
+            controller: "AuthPollController",
+            controllerAs: "poll",
+            templateUrl: "/views/newpoll.html",
+            title: "New Poll"
         });
         $routeProvider.otherwise({ redirectTo: "/polls" });
     });

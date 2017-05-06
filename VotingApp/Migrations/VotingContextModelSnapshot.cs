@@ -123,6 +123,22 @@ namespace VotingApp.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("VotingApp.Models.IpAdress", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Adress");
+
+                    b.Property<int?>("PollId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PollId");
+
+                    b.ToTable("IpAdress");
+                });
+
             modelBuilder.Entity("VotingApp.Models.Poll", b =>
                 {
                     b.Property<int>("Id")
@@ -130,9 +146,9 @@ namespace VotingApp.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("Url");
-
                     b.Property<string>("UserId");
+
+                    b.Property<string>("UserName");
 
                     b.HasKey("Id");
 
@@ -191,6 +207,24 @@ namespace VotingApp.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("VotingApp.Models.Vote", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("PollId");
+
+                    b.Property<int>("VoteCount");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PollId");
+
+                    b.ToTable("Votes");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole")
@@ -228,11 +262,25 @@ namespace VotingApp.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("VotingApp.Models.IpAdress", b =>
+                {
+                    b.HasOne("VotingApp.Models.Poll")
+                        .WithMany("Adresses")
+                        .HasForeignKey("PollId");
+                });
+
             modelBuilder.Entity("VotingApp.Models.Poll", b =>
                 {
                     b.HasOne("VotingApp.Models.User")
                         .WithMany("Polls")
                         .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("VotingApp.Models.Vote", b =>
+                {
+                    b.HasOne("VotingApp.Models.Poll")
+                        .WithMany("Votes")
+                        .HasForeignKey("PollId");
                 });
         }
     }

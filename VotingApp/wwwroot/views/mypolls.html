@@ -1,0 +1,13 @@
+﻿<div ng-init="poll.getUserPolls()"></div>
+
+<div class="jumbotron">
+    <h1>My Polls</h1>
+    <wait-cursor ng-show="poll.isBusy"></wait-cursor>
+    <div>
+        <div ng-repeat="poll in poll.myPolls">
+            <a class="poll" ng-href="/#!/polls/{{poll.id}}">{{poll.name}}</a>
+        </div>
+    </div>
+</div>
+
+

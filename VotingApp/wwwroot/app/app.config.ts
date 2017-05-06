@@ -1,36 +1,64 @@
-﻿/// <reference path="globals/global.d.ts" />
-
-
-//We are using custom properties to change page title 
-//so we cant use Angular Types ):
-module app
+﻿module app
 {
-    let app = angular.module("VotingApp");
+    //Interfaces that extend on Angular and Angular Route interfaces
+    //for use with custom properties
+    export interface IRouteParams extends angular.route.IRouteParamsService {
+        userId: number | string;
+    }
 
-        app.config(($routeProvider: any) => {
+    export interface IAppRoute extends angular.route.IRoute {
+        title: string;
+    }
 
-            $routeProvider.when("/polls", {
+    export interface IAppRootService extends angular.IRootScopeService {
+        title: string;
+    }
 
-                controller: "HomeController",
-                controllerAs: "home",
-                templateUrl: "/views/home.html",
-                title: "All Polls"
-            });
+    var app = angular.module("VotingApp");
 
-            $routeProvider.when("/polls/test", {
-                controller: "HomeController",
-                controllerAs: "home",
-                templateUrl: "/views/test.html",
-                title: "Test"
-            });
+    app.config(($routeProvider: angular.route.IRouteProvider) => {
 
-            $routeProvider.otherwise({ redirectTo: "/polls" });
-         });
+        $routeProvider.when("/polls", <IAppRoute>{
 
-        app.run(['$rootScope', function ($rootScope: any) {
+            controller: "HomeController",
+            controllerAs: "home",
+            templateUrl: "/views/home.html",
+            title: "All Polls"
+        });
+
+        $routeProvider.when("/polls/:userId/", <IAppRoute>{
+            controller: "PollController",
+            controllerAs: "poll",
+            templateUrl: "/views/poll.html",
+            title: "Poll"
+        });
+
+        $routeProvider.when("/mypolls", <IAppRoute>{
+            controller: "AuthPollController",
+            controllerAs: "poll",
+            templateUrl: "/views/mypolls.html",
+            title: "My Polls"
+        });
+
+        $routeProvider.when("/newpoll", <IAppRoute>{
+            controller: "AuthPollController",
+            controllerAs: "poll",
+            templateUrl: "/views/newpoll.html",
+            title: "New Poll"
+        });
+
+
+
+        $routeProvider.otherwise({ redirectTo: "/polls" });
+    });
+
+    app.run(['$rootScope', function ($rootScope: IAppRootService) {
 
         $rootScope.$on("$routeChangeSuccess", function (event: any, current: any, previous: any) {
             $rootScope.title = current.$$route.title;
         });
-     }]);
+    }]);
 }
+
+    
+    

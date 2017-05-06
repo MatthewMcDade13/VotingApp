@@ -10,9 +10,21 @@ namespace VotingApp.Models
     {
         IEnumerable<Poll> GetAllPolls();
 
-        IEnumerable<User> GetAllUsers();
+        Poll GetPollById(int id);        
+
+        IEnumerable<Poll> GetPollsByUser(string username);
 
         void AddPoll(Poll poll);
+
+        void DeletePoll(int id);
+
+        void AddVotes(ICollection<Vote> votes);
+
+        IEnumerable<User> GetAllUsers();
+
+        void CastVote(int pollId, string voteName, string userIp);
+
+        void CreateNewVoteOption(int pollId, string voteName);
 
         Task<bool> SaveChangesAsync();
     }

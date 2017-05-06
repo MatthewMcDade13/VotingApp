@@ -12,6 +12,7 @@ namespace VotingApp.Models
     public class VotingContext : IdentityDbContext<User>
     {
         public DbSet<Poll> Polls { get; set; }
+        public DbSet<Vote> Votes { get; set; }
         public IConfigurationRoot config;
 
         public VotingContext(IConfigurationRoot config, DbContextOptions options)

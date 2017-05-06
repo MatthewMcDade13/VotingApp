@@ -1,6 +1,6 @@
-/// <reference path="globals/global.d.ts" />
 var app;
 (function (app) {
-    angular.module("VotingApp", ["ngRoute"]);
+    angular.module("helpfulUi", []);
+    angular.module("VotingApp", ["ngRoute", "helpfulUi", "googlechart"]);
 })(app || (app = {}));
 //# sourceMappingURL=app.js.map

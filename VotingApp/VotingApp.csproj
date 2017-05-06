@@ -5,27 +5,61 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\app\directives\**" />
     <Compile Remove="wwwroot\app\global\**" />
+    <Compile Remove="wwwroot\models\**" />
+    <Content Remove="wwwroot\app\directives\**" />
     <Content Remove="wwwroot\app\global\**" />
+    <Content Remove="wwwroot\models\**" />
+    <EmbeddedResource Remove="wwwroot\app\directives\**" />
     <EmbeddedResource Remove="wwwroot\app\global\**" />
+    <EmbeddedResource Remove="wwwroot\models\**" />
+    <None Remove="wwwroot\app\directives\**" />
     <None Remove="wwwroot\app\global\**" />
+    <None Remove="wwwroot\models\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="wwwroot\app\app.config.ts" />
     <Content Include="wwwroot\app\app.ts" />
-    <Content Include="wwwroot\app\globals\global.d.ts" />
+    <Content Include="wwwroot\app\AuthPollController.js" />
+    <Content Include="wwwroot\app\AuthPollController.js.map" />
+    <Content Include="wwwroot\app\HomeController.js" />
+    <Content Include="wwwroot\app\HomeController.js.map" />
     <Content Include="wwwroot\app\HomeController.ts" />
+    <Content Include="wwwroot\app\models\Chart.ts" />
+    <Content Include="wwwroot\app\models\ChartCell.ts" />
+    <Content Include="wwwroot\app\models\ChartColumn.ts" />
+    <Content Include="wwwroot\app\models\ChartRow.ts" />
+    <Content Include="wwwroot\app\models\IpAdress.ts" />
+    <Content Include="wwwroot\app\models\Poll.js" />
+    <Content Include="wwwroot\app\models\Poll.js.map" />
+    <Content Include="wwwroot\app\models\Poll.ts" />
+    <Content Include="wwwroot\app\models\Vote.js" />
+    <Content Include="wwwroot\app\models\Vote.js.map" />
+    <Content Include="wwwroot\app\models\Vote.ts" />
+    <Content Include="wwwroot\app\AuthPollController.ts" />
+    <Content Include="wwwroot\app\PollController.ts" />
+    <Content Include="wwwroot\app\services\AppHttpService.ts" />
+    <Content Include="wwwroot\app\services\FormParseService.ts" />
+    <Content Include="wwwroot\app\services\GoogleChartsParseService.ts" />
+    <Content Include="wwwroot\app\services\IpService.ts" />
     <Content Include="wwwroot\app\tsconfig.json" />
     <Content Include="wwwroot\css\site.css" />
+    <Content Include="wwwroot\js\toggleTabs.js" />
+    <Content Include="wwwroot\views\confirmationOverlay.html" />
     <Content Include="wwwroot\views\home.html" />
-    <Content Include="wwwroot\views\test.html" />
+    <Content Include="wwwroot\views\mypolls.html" />
+    <Content Include="wwwroot\views\newpoll.html" />
+    <Content Include="wwwroot\views\poll.html" />
+    <Content Include="wwwroot\views\waitCursor.html" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Api\" />
+    <None Include="wwwroot\app\directives\waitCursor.ts" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.0.2" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />

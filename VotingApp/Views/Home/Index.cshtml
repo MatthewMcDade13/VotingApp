@@ -1,65 +1,22 @@
-﻿<!DOCTYPE html>
-
-<html ng-app="VotingApp">
-<head>
-    <meta name="viewport" content="width=device-width" />
-
-    <title ng-bind="title">All Polls</title>
-
-    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="~/css/site.css" rel="stylesheet" />
-
-</head>
-<body>
-
-    <div class="container">
-        <nav class="navbar navbar-toggleable-md navbar-inverse" style="background-color: #3b5998;">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" ng-href="/">VotingApp</a>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" ng-href="/">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" ng-href="/">New Poll</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" ng-href="/">My Polls</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Username
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" ng-href="/">Logout</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <div ng-view></div>
-    </div>
-
-    
-
-   
+﻿
 
 
 
-    <!--Scripts-->
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/tether/dist/js/tether.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="~/lib/angular/angular.min.js"></script>
-    <script src="~/lib/angular-route/angular-route.min.js"></script>
-    <script src="~/app/app.js"></script>
-    <script src="~/app/app.config.js"></script>
-    <script src="~/app/HomeController.js"></script>
-</body>
-</html>
+@section Scripts {
+<script src="~/lib/angular/angular.min.js"></script>
+<script src="~/lib/angular-route/angular-route.min.js"></script>
+<script src="~/app/app.js"></script>
+<script src="~/lib/angular-google-chart/ng-google-chart.min.js"></script>
+<script src="~/app/app.config.js"></script>
+<script src="~/app/directives/waitCursor.js"></script>
+<script src="~/app/services/GoogleChartsParseService.js"></script>
+<script src="~/app/services/IpService.js"></script>
+<script src="~/app/services/FormParseService.js"></script>
+<script src="~/app/services/AppHttpService.js"></script>
+<script src="~/app/HomeController.js"></script>
+<script src="~/app/PollController.js"></script>
+<script src="~/app/AuthPollController.js"></script>
+
+}
+
+<div ng-view></div>

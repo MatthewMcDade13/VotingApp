@@ -1,13 +1,15 @@
-﻿<title>Home</title>
-
+﻿
+<div ng-init="home.getAllPolls()"></div>
 
 <div class="jumbotron">
-    <!--<div id="poll" ng-repeat="poll in home.polls">
-        <h3>{{poll}}</h3>
-    </div>-->
-        
-    <div  ng-repeat="poll in home.polls">
-        <a id="poll" href="#">{{poll}}</a>
+    <h1>All Polls</h1>
+    <!--<div ng-show="home.isBusy"><i class="fa fa-spinner fa-spin"></i>Loading...</div>-->
+    <wait-cursor ng-show="home.isBusy"></wait-cursor>
+    <div ng-repeat="poll in home.polls">
+        <a class="poll" ng-href="/#!/polls/{{poll.id}}/">
+            {{poll.name}}
+        </a>
     </div>
-    
 </div>
+     
+    

@@ -1,0 +1,27 @@
+﻿<div class="jumbotron">
+    <form novalidate name="newPollForm" ng-submit="poll.createNewPoll()">
+        <div class="form-group">
+            <label for="name">Poll Name</label>
+            <input class="form-control" type="text" id="name" name="name" 
+                   ng-model="poll.newPoll.name" ng-maxlength="25" required/>
+            <span ng-show="newPollForm.name.$error.required" class="text-danger">Poll name is required</span>
+            <span ng-show="newPollForm.name.$error.maxlength" class="text-danger">Poll name cannot be longer than 25 characters</span>
+
+        </div>
+        <div class="form-group">
+            <label for="voteOptions">Voting Options (Separated by line)</label>
+            <textarea class="form-control" ng-model="poll.voteOptions" name="voteOptions" 
+                      ng-trim="false" ng-minlength="3" rows="5" required></textarea>
+            <span ng-show="newPollForm.voteOptions.$error.minlength" class="text-danger">You must enter at least two vote options</span>
+            <span ng-hide="poll.textAreaIsValid" class="text-danger">
+            You must enter at least two vote options and options cannot be longer than 25 characters. <br /> 
+                No Duplicates!
+            </span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create Poll"
+                   class="btn btn-success"
+                   ng-disabled="newPollForm.$invalid"/>
+        </div>
+    </form>
+</div>

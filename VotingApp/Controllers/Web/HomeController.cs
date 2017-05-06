@@ -14,5 +14,10 @@ namespace VotingApp.Controllers.Web
         {
             return View();
         }
+
+        public IActionResult Error()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,1 @@
+var app;!function(e){!function(e){var r=function(){function e(){}return e.prototype.checkIp=function(e,r){for(var n=0;n<e.length;n++)if(e[n].adress===r)return!1;return!0},e}();e.IpService=r,angular.module("VotingApp").service("IpService",r)}(e.services||(e.services={}))}(app||(app={}));

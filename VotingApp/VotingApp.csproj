@@ -7,20 +7,24 @@
   <ItemGroup>
     <Compile Remove="wwwroot\app\directives\**" />
     <Compile Remove="wwwroot\app\global\**" />
+    <Compile Remove="wwwroot\js\**" />
     <Compile Remove="wwwroot\models\**" />
     <Content Remove="wwwroot\app\directives\**" />
     <Content Remove="wwwroot\app\global\**" />
+    <Content Remove="wwwroot\js\**" />
     <Content Remove="wwwroot\models\**" />
     <EmbeddedResource Remove="wwwroot\app\directives\**" />
     <EmbeddedResource Remove="wwwroot\app\global\**" />
+    <EmbeddedResource Remove="wwwroot\js\**" />
     <EmbeddedResource Remove="wwwroot\models\**" />
     <None Remove="wwwroot\app\directives\**" />
     <None Remove="wwwroot\app\global\**" />
+    <None Remove="wwwroot\js\**" />
     <None Remove="wwwroot\models\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\app\app.config.ts" />
+    <Content Include="wwwroot\app\config.ts" />
     <Content Include="wwwroot\app\app.ts" />
     <Content Include="wwwroot\app\AuthPollController.js" />
     <Content Include="wwwroot\app\AuthPollController.js.map" />
@@ -46,7 +50,6 @@
     <Content Include="wwwroot\app\services\IpService.ts" />
     <Content Include="wwwroot\app\tsconfig.json" />
     <Content Include="wwwroot\css\site.css" />
-    <Content Include="wwwroot\js\toggleTabs.js" />
     <Content Include="wwwroot\views\confirmationOverlay.html" />
     <Content Include="wwwroot\views\home.html" />
     <Content Include="wwwroot\views\mypolls.html" />

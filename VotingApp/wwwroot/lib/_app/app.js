@@ -1,0 +1,1 @@
+var app;!function(p){angular.module("helpfulUi",[]),angular.module("VotingApp",["ngRoute","helpfulUi","googlechart"])}(app||(app={}));

@@ -62,9 +62,12 @@ var app;
                 return __awaiter(this, void 0, void 0, function () {
                     return __generator(this, function (_a) {
                         switch (_a.label) {
-                            case 0: return [4 /*yield*/, this.http.deletePoll(this.pollView.id, this.pollView.userName)];
+                            case 0:
+                                this.isBusy = true;
+                                return [4 /*yield*/, this.http.deletePoll(this.pollView.id, this.pollView.userName)];
                             case 1:
                                 _a.sent();
+                                this.isBusy = false;
                                 this.$location.path("/#!/polls");
                                 return [2 /*return*/];
                         }
@@ -119,6 +122,7 @@ var app;
             //and if not, casts vote and posts to database.
             PollController.prototype.castVote = function (vote) {
                 return __awaiter(this, void 0, void 0, function () {
+                    var _this = this;
                     return __generator(this, function (_a) {
                         switch (_a.label) {
                             case 0:
@@ -126,10 +130,14 @@ var app;
                                 //Cast vote
                                 vote.voteCount++;
                                 this.pollView.adresses.push(this.userIp);
+                                this.isBusy = true;
                                 return [4 /*yield*/, this.http.castVote(vote, this.pollView.id)];
                             case 1:
                                 _a.sent();
-                                this.drawGoogleChart(this.pollView);
+                                this.$scope.$apply(function () {
+                                    _this.drawGoogleChart(_this.pollView);
+                                    _this.isBusy = false;
+                                });
                                 return [3 /*break*/, 3];
                             case 2:
                                 //TODO: Remove this and put in some text into the 

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using VotingApp.Models;
@@ -66,7 +67,8 @@ namespace VotingApp.Controllers.Web
                     User user = new User()
                     {
                         UserName = vm.UserName,
-                        Email = vm.Email
+                        Email = vm.Email,
+                        DateCreated = DateTime.UtcNow
                     };
 
                     //Attempt to create the user

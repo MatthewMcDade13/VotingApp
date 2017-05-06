@@ -61,7 +61,9 @@
 
         async deletePoll(): Promise<void>
         {
+            this.isBusy = true;
             await this.http.deletePoll(this.pollView.id, this.pollView.userName);
+            this.isBusy = false;
             this.$location.path("/#!/polls");
         }
 
@@ -69,8 +71,6 @@
         {
             this.userIp = await this.http.getUserIp();
         }
-
-
 
         async getPoll(): Promise<void>
         {
@@ -105,9 +105,14 @@
                 vote.voteCount++;
                 this.pollView.adresses.push(this.userIp);
 
+                this.isBusy = true;
                 await this.http.castVote(vote, this.pollView.id);
 
-                this.drawGoogleChart(this.pollView);
+                this.$scope.$apply(() => {
+                    this.drawGoogleChart(this.pollView);
+                    this.isBusy = false;
+                });
+                
             }
             else
             {

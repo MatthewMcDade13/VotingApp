@@ -23,40 +23,7 @@
     <None Remove="wwwroot\models\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="wwwroot\app\config.ts" />
-    <Content Include="wwwroot\app\app.ts" />
-    <Content Include="wwwroot\app\AuthPollController.js" />
-    <Content Include="wwwroot\app\AuthPollController.js.map" />
-    <Content Include="wwwroot\app\HomeController.js" />
-    <Content Include="wwwroot\app\HomeController.js.map" />
-    <Content Include="wwwroot\app\HomeController.ts" />
-    <Content Include="wwwroot\app\models\Chart.ts" />
-    <Content Include="wwwroot\app\models\ChartCell.ts" />
-    <Content Include="wwwroot\app\models\ChartColumn.ts" />
-    <Content Include="wwwroot\app\models\ChartRow.ts" />
-    <Content Include="wwwroot\app\models\IpAdress.ts" />
-    <Content Include="wwwroot\app\models\Poll.js" />
-    <Content Include="wwwroot\app\models\Poll.js.map" />
-    <Content Include="wwwroot\app\models\Poll.ts" />
-    <Content Include="wwwroot\app\models\Vote.js" />
-    <Content Include="wwwroot\app\models\Vote.js.map" />
-    <Content Include="wwwroot\app\models\Vote.ts" />
-    <Content Include="wwwroot\app\AuthPollController.ts" />
-    <Content Include="wwwroot\app\PollController.ts" />
-    <Content Include="wwwroot\app\services\AppHttpService.ts" />
-    <Content Include="wwwroot\app\services\FormParseService.ts" />
-    <Content Include="wwwroot\app\services\GoogleChartsParseService.ts" />
-    <Content Include="wwwroot\app\services\IpService.ts" />
-    <Content Include="wwwroot\app\tsconfig.json" />
-    <Content Include="wwwroot\css\site.css" />
-    <Content Include="wwwroot\views\confirmationOverlay.html" />
-    <Content Include="wwwroot\views\home.html" />
-    <Content Include="wwwroot\views\mypolls.html" />
-    <Content Include="wwwroot\views\newpoll.html" />
-    <Content Include="wwwroot\views\poll.html" />
-    <Content Include="wwwroot\views\waitCursor.html" />
-  </ItemGroup>
+
 
   <ItemGroup>
     <None Include="wwwroot\app\directives\waitCursor.ts" />

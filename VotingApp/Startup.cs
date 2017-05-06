@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
@@ -13,8 +9,6 @@ using VotingApp.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using AutoMapper;
-using VotingApp.ViewModels;
 
 namespace VotingApp
 {
@@ -104,12 +98,6 @@ namespace VotingApp
             ILoggerFactory loggerFactory, VotingAppSeedData seeder)
         {
             loggerFactory.AddConsole();
-
-            //Sets up mapping for objects used in API responses
-            Mapper.Initialize(config =>
-            {
-                
-            });
 
             if (env.IsDevelopment())
             {

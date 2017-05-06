@@ -116,3 +116,37 @@ nav
     margin-top: 46px;
 }
 
+footer
+{
+    bottom: 0;
+    position: fixed;
+    font-size: 25px;
+    text-align: center;
+}
+
+.fa
+{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.fa-linkedin
+{
+    color: #0077b5;
+}
+
+.fa-github
+{
+    color: #6e5494
+}
+
+.fa-free-code-camp
+{
+    color: #006400;
+}
+
+.fa-codepen
+{
+    color: black;
+}
+

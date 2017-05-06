@@ -8,9 +8,10 @@ using VotingApp.Models;
 namespace VotingApp.Migrations
 {
     [DbContext(typeof(VotingContext))]
-    partial class VotingContextModelSnapshot : ModelSnapshot
+    [Migration("20170506060544_PostgresqlMigration")]
+    partial class PostgresqlMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)

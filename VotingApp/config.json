@@ -1,5 +1,5 @@
 ﻿{
   "Data": {
-    "ConnectionString": "Server=(localdb)\\MSSQLLocalDB;Database=VotingAppDb;MultipleActiveResultSets=true;"
+    "ConnectionString": "Database=d3jo5iq36d5bog;host=ec2-23-23-237-68.compute-1.amazonaws.com;port=5432;user id=bgbjjrteivixrb;password=b9f643765d53851248559d6f22e186c64e808e4e17c19d2719650bdc8c10e19e;sslmode=Require;Trust Server Certificate=true"
   }
 }

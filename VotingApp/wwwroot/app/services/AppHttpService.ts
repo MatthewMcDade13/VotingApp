@@ -20,7 +20,7 @@
 
         async getUserIp(): Promise<IpAdress>
         {
-            return this.$http.get("http://freegeoip.net/json/")
+            return this.$http.get("https://freegeoip.net/json/")
                 .then(response => {
                     let geoData: any = response.data;
                     return <IpAdress>{ "adress": geoData.ip };

@@ -52,7 +52,7 @@ var app;
             AppHttpService.prototype.getUserIp = function () {
                 return __awaiter(this, void 0, void 0, function () {
                     return __generator(this, function (_a) {
-                        return [2 /*return*/, this.$http.get("http://freegeoip.net/json/")
+                        return [2 /*return*/, this.$http.get("https://freegeoip.net/json/")
                                 .then(function (response) {
                                 var geoData = response.data;
                                 return { "adress": geoData.ip };

@@ -34,8 +34,6 @@ namespace VotingApp.Models
                         .Where( poll => poll.Id == pollId)
                         .ToList();
 
-            //Returns null if result count is 0,
-            //otherwise returns the Poll object that we want.
             return result.Count == 0 ? null : result[0];
         }
 

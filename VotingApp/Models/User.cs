@@ -9,6 +9,6 @@ namespace VotingApp.Models
 {
     public class User : IdentityUser
     {
-        public ICollection<Poll> Polls { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }

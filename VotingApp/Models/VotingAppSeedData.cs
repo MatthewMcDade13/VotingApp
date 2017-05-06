@@ -25,7 +25,8 @@ namespace VotingApp.Models
                 User user = new User()
                 {
                     UserName = "admin",
-                    Email = "app.test@admin.com"
+                    Email = "app.test@admin.com",
+                    DateCreated = DateTime.UtcNow
                 };
 
                 await userManager.CreateAsync(user, "Password1!");

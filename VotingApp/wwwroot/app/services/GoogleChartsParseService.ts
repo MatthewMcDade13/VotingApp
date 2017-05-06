@@ -27,8 +27,6 @@
                 });
             }
 
-            console.log(chart);
-
             return chart;
         }
 

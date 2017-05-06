@@ -70,7 +70,6 @@
         async getUserIp(): Promise<void>
         {
             this.userIp = await this.http.getUserIp();
-            console.log(this.userIp);
         }
 
         async getPoll(): Promise<void>

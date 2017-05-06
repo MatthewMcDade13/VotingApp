@@ -84,7 +84,6 @@ var app;
                                 return [4 /*yield*/, this.http.getUserIp()];
                             case 1:
                                 _a.userIp = _b.sent();
-                                console.log(this.userIp);
                                 return [2 /*return*/];
                         }
                     });

@@ -17,7 +17,6 @@ var app;
                         ]
                     });
                 }
-                console.log(chart);
                 return chart;
             };
             GoogleChartsParseService.prototype.addRowToChart = function (chart, voteOption) {

@@ -36,15 +36,7 @@ namespace VotingApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(config =>
-           {
-               //Only use HTTPS for production
-               if (env.IsProduction())
-               {
-                   //Requires Https if accessing site from Production machine
-                   config.Filters.Add(new RequireHttpsAttribute());
-               }               
-           })
+            services.AddMvc();
             .AddJsonOptions(options =>
             {
                 options

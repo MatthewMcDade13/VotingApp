@@ -11,7 +11,7 @@
         {
             for (let i = 0; i < adresses.length; i++)
             {
-                if (adresses[i].ip === userIp)
+                if (adresses[i].adress === userIp)
                 {
                     return false;
                 }

@@ -2,6 +2,6 @@
 {
     export class IpAdress
     {
-        ip: string;
+        adress: string;
     }
 }

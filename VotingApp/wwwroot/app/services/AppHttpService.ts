@@ -22,7 +22,8 @@
         {
             return this.$http.get("http://freegeoip.net/json/")
                 .then(response => {
-                    return <IpAdress>response.data;
+                    let geoData: any = response.data;
+                    return <IpAdress>{ "adress": geoData.ip };
                 });
         }
 
@@ -71,13 +72,14 @@
                 });
         }
 
-        async castVote(vote: Vote, pollId: number): Promise<void>
+        async castVote(vote: Vote, pollId: number, userIp: string): Promise<void>
         {
 
                await this.$http.put("/api/poll/vote", {
                     "name": vote.name,
                     "voteCount": vote.voteCount,
-                    "pollId": pollId
+                    "pollId": pollId,
+                    "userIp": userIp
                 });            
         }
 

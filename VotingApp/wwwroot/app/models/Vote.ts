@@ -4,5 +4,7 @@
     {
         name: string;
         voteCount: number;
+        pollId: number;
+        userIp: string;
     }
 }

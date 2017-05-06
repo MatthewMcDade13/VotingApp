@@ -126,12 +126,12 @@ var app;
                     return __generator(this, function (_a) {
                         switch (_a.label) {
                             case 0:
-                                if (!this.IpService.checkIp(this.pollView.adresses, this.userIp.ip)) return [3 /*break*/, 2];
+                                if (!this.IpService.checkIp(this.pollView.adresses, this.userIp.adress)) return [3 /*break*/, 2];
                                 //Cast vote
                                 vote.voteCount++;
                                 this.pollView.adresses.push(this.userIp);
                                 this.isBusy = true;
-                                return [4 /*yield*/, this.http.castVote(vote, this.pollView.id)];
+                                return [4 /*yield*/, this.http.castVote(vote, this.pollView.id, this.userIp.adress)];
                             case 1:
                                 _a.sent();
                                 this.$scope.$apply(function () {
@@ -159,7 +159,8 @@ var app;
                                 voteOption = {
                                     "name": this.newVoteOptionName,
                                     "voteCount": 0,
-                                    "pollId": this.pollView.id
+                                    "pollId": this.pollView.id,
+                                    "userIp": this.userIp.adress
                                 };
                                 //If the name of the new vote option the user entered already exists, tell them so
                                 //and dont allow them to create a new one
@@ -168,7 +169,7 @@ var app;
                                     alert("that vote option already exists!");
                                     return [2 /*return*/];
                                 }
-                                if (!this.IpService.checkIp(this.pollView.adresses, this.userIp.ip)) return [3 /*break*/, 2];
+                                if (!this.IpService.checkIp(this.pollView.adresses, this.userIp.adress)) return [3 /*break*/, 2];
                                 this.isBusy = true;
                                 return [4 /*yield*/, this.http.createNewVoteOption(voteOption)];
                             case 1:

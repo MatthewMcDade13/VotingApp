@@ -70,9 +70,9 @@ namespace VotingApp.Controllers.Api
         [HttpPut("vote")]
         public async Task<IActionResult> CastVote([FromBody]VoteViewModel vm)
         {
-            string ip = Request.HttpContext.Connection.RemoteIpAddress.ToString();
+            //string ip = Request.HttpContext.Connection.RemoteIpAddress.ToString();
 
-            repo.CastVote(vm.PollId, vm.Name, ip);
+            repo.CastVote(vm.PollId, vm.Name, vm.UserIp);
             await repo.SaveChangesAsync();
             return Ok();
         }

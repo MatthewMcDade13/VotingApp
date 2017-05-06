@@ -95,10 +95,9 @@
         //and if not, casts vote and posts to database.
         async castVote(vote: Vote): Promise<void>
         {
-
             //If current user Ip is NOT found in the array of known
             //User Ips associated with this pollView
-            if (this.IpService.checkIp(this.pollView.adresses, this.userIp.ip))
+            if (this.IpService.checkIp(this.pollView.adresses, this.userIp.adress))
             {
 
                 //Cast vote
@@ -106,7 +105,7 @@
                 this.pollView.adresses.push(this.userIp);
 
                 this.isBusy = true;
-                await this.http.castVote(vote, this.pollView.id);
+                await this.http.castVote(vote, this.pollView.id, this.userIp.adress);
 
                 this.$scope.$apply(() => {
                     this.drawGoogleChart(this.pollView);
@@ -128,7 +127,8 @@
             let voteOption: Vote = <Vote>{
                 "name": this.newVoteOptionName,
                 "voteCount": 0,
-                "pollId": this.pollView.id
+                "pollId": this.pollView.id,
+                "userIp": this.userIp.adress
             };
 
             //If the name of the new vote option the user entered already exists, tell them so
@@ -140,7 +140,7 @@
                 return;
             }
 
-            if (this.IpService.checkIp(this.pollView.adresses, this.userIp.ip))
+            if (this.IpService.checkIp(this.pollView.adresses, this.userIp.adress))
             {
                 this.isBusy = true;
                 await this.http.createNewVoteOption(voteOption);

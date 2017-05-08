@@ -47,9 +47,7 @@
                 {
                     this.voteOptions[i] = this.voteOptions[i].trim();
 
-                    //JS cant find/doesnt like when I instantiate a Vote class with new keyword?
-                    //This is my workaround.
-                    poll.votes.push(<Vote>{ "name": this.voteOptions[i] });
+                    poll.votes.push(new Vote(this.voteOptions[i]));
                 }
 
                 return true;

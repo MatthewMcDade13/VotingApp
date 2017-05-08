@@ -2,6 +2,7 @@ var app;
 (function (app) {
     var services;
     (function (services) {
+        var Vote = app.models.Vote;
         var FormParseService = (function () {
             function FormParseService() {
                 this.voteOptions = [];
@@ -30,9 +31,7 @@ var app;
                     poll.votes = [];
                     for (var i = 0; i < this.voteOptions.length; i++) {
                         this.voteOptions[i] = this.voteOptions[i].trim();
-                        //JS cant find/doesnt like when I instantiate a Vote class with new keyword?
-                        //This is my workaround.
-                        poll.votes.push({ "name": this.voteOptions[i] });
+                        poll.votes.push(new Vote(this.voteOptions[i]));
                     }
                     return true;
                 }

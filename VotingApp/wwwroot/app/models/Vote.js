@@ -3,7 +3,8 @@ var app;
     var models;
     (function (models) {
         var Vote = (function () {
-            function Vote() {
+            function Vote(name) {
+                this.name = name;
             }
             return Vote;
         }());

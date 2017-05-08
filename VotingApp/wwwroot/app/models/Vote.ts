@@ -6,5 +6,10 @@
         voteCount: number;
         pollId: number;
         userIp: string;
+
+        constructor(name: string)
+        {
+            this.name = name;
+        }
     }
 }
